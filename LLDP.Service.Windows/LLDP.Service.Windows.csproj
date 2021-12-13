@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+      <TargetFramework>net5.0</TargetFramework>
+	  <Nullable>enable</Nullable>
+	  <OutputType>exe</OutputType>
+	  <PublishSingleFile>true</PublishSingleFile>
+	  <SelfContained>true</SelfContained>
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <PlatformTarget>x64</PlatformTarget>
+	  <DebugType>embedded</DebugType>
+	  <PublishReadyToRun>true</PublishReadyToRun>
+      <UserSecretsId>dotnet-LLDP.Service.Windows-322E5DA6-34C0-4997-A913-C1A300584BC9</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="install.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="npcap-1.60.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LLDP.Service.Core\LLDP.Service.Core.csproj" />
+  </ItemGroup>
+</Project>
